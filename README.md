@@ -5,8 +5,17 @@ To get started with this template, simply paste this command into your terminal:
 ```bash
 git clone https://github.com/phillip-england/bun_web_template <your-project-name>
 ```
+You'll then need to install all the required dependancies. You can do this by running:
+```bash
+bun install
+```
 
 ## Development
+To start tailwind and watch changes to class names in your project run:
+```bash
+bun run tailwind
+```
+
 To start the development server run:
 ```bash
 bun run dev

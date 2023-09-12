@@ -1,20 +1,14 @@
 // app.tsx
 import { Elysia } from 'elysia'
 import { html } from '@elysiajs/html'
+import { HelloWorld } from './components/HelloWorld'
 
 const app = new Elysia()
 
 app.use(html())
 
 app.get('/', () => (
-        <html lang="en">
-            <head>
-                <title>Hello World</title>
-            </head>
-            <body>
-                <h1>Hello World</h1>
-            </body>
-        </html>
+        <HelloWorld name="Bob" age="32" />
     ))
 
 

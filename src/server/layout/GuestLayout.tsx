@@ -9,12 +9,18 @@ type GuestLayoutProps = {
 }
 
 export const GuestLayout = ({title, path, children}: GuestLayoutProps): JSX.Element => {
+	let fontAwesomeKey: string | undefined = Bun.env.FONT_AWESOME_KEY
+	console.log(fontAwesomeKey)
+	if (fontAwesomeKey == undefined) {
+		fontAwesomeKey = ''
+		console.error('FONT_AWESOME_KEY not provided in .env')
+	}
 	return (
 		<html lang="en">
 			<head>
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></meta>
 				<link rel="stylesheet" href="/public/css/output.css"></link>
-				<script src="https://kit.fontawesome.com/ef0709a418.js" crossorigin="anonymous"></script>
+				<script src={fontAwesomeKey} crossorigin="anonymous"></script>
 				<title>{title}</title>
 			</head>
 			<body class='bg-black text-white'>

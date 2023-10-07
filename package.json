@@ -4,7 +4,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch ./src/server/server.tsx",
-    "build": "bun build ./src/client/client.ts --outdir ./public/js --watch",
+    "bundle": "bun build ./src/client/client.ts --outdir ./public/js --watch",
     "tailwind": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
   },
   "dependencies": {

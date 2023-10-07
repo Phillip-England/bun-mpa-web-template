@@ -18,7 +18,7 @@ bun install
 ## Environment Variables
 This project uses fontawesome for icons. Provide a FONTAWESOME_KEY in a .env file found in the root of your project to opt in. To get your own key, go to fontawesome and get a script tag to use their icons. In the script tag, the src attribute is the key. Place this src attribute in the .env file.
 ```bash
-FONTAWESOME_KEY = <the value in the src attribute of your fontawesome script tag>
+FONTAWESOME_KEY = the value in the src attribute of your fontawesome script tag
 ```
 
 ## Development

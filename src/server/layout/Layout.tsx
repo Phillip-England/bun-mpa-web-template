@@ -10,8 +10,6 @@ type LayoutProps = {
 
 export const Layout = ({title, path, children}: LayoutProps): JSX.Element => {
 	let fontAwesomeKey: string | undefined = Bun.env.FONTAWESOME_KEY
-	console.log(fontAwesomeKey)
-
 	if (fontAwesomeKey == undefined) {
 		fontAwesomeKey = ''
 		console.error('FONTAWESOME_KEY not provided in .env')

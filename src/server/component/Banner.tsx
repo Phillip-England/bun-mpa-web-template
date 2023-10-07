@@ -1,3 +1,6 @@
+/// <reference lib="dom" />
+/// <reference lib="dom.iterable" />
+
 import { NavLink } from "./NavLink"
 
 
@@ -28,7 +31,7 @@ export const Banner = ({path}: BannerProps): JSX.Element => {
 			<nav id={menuID} class={`hidden w-3/5 h-full fixed left-0 bg-darkgray z-40`}>
 				<ul class='flex flex-col w-full p-2'>
 					<li class='flex mb-2'>
-						<NavLink path={path} text="Vision & Values" href='/' />
+						<NavLink path={path} text="Vision & Values" href='/vision' />
 					</li>
 					<li class='flex mb-2'>
 						<NavLink path={path} text="Customer Service" href='/score/cem' />
@@ -47,4 +50,9 @@ export const Banner = ({path}: BannerProps): JSX.Element => {
 			<div id={overlayID} class={`bg-black opacity-50 hidden absolute top-0 h-screen w-screen z-30`}></div>
 		</>
 	)
+}
+
+
+const hydrate = () => {
+	document.getElementById('yo')
 }

@@ -1,6 +1,9 @@
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />
 
+import { Banner } from "./component/Banner";
+import { LoginForm } from "./component/LoginForm";
+
 // pulling in our application IDs and class names
 // import { bannerBarsIconID, bannerXIconID, navMenuID, navOverlayID, TopBarID } from "../config/dom"
 
@@ -17,7 +20,7 @@ type Router = {
 // our applications routes
 const router: Router = {
 	"/": () => {loginPage()},
-	"/vison": () => {visionPage()},
+	"/vision": () => {visionPage()},
 	"/score/cem": () => {cemPage()},
 	"/score/sales": () => {salesPage()},
 	"/score/talent": () => {talentPage()},
@@ -29,72 +32,68 @@ const router: Router = {
 //=======================================================
 
 const loginPage = () => {
+	let banner = new Banner()
+	toggleNavMenu(banner)
+	let loginForm = new LoginForm()
+	console.log(banner)
+	console.log(loginForm)
+
 }
 
 const visionPage = () => {
-	// const banner = new Banner()
+	let banner = new Banner()
+	toggleNavMenu(banner)
+	console.log(banner)
 }
 
 const cemPage = () => {
-	// const banner = new Banner()
+	let banner = new Banner()
+	toggleNavMenu(banner)
+	console.log(banner)
 }
 
 const salesPage = () => {
-	// const banner = new Banner()
+	let banner = new Banner()
+	toggleNavMenu(banner)
+	console.log(banner)
 }
 
 const talentPage = () => {
-	// const banner = new Banner()
+	let banner = new Banner()
+	toggleNavMenu(banner)
+	console.log(banner)
 }
 
 const financePage = () => {
-	// const banner = new Banner()
+	let banner = new Banner()
+	toggleNavMenu(banner)
+	console.log(banner)
 }
 
 //=======================================================
-// CLIENT-SIDE COMPONENTS
+// EVENT HANDLERS
 //=======================================================
 
-// class Banner {
-// 	topBar: Element
-// 	x: Element
-// 	bars: Element
-// 	menu: Element
-// 	overlay: Element
-// 	constructor() {
-// 		this.topBar = document.getElementById(TopBarID) as Element
-// 		this.x = document.getElementById(bannerXIconID) as Element
-// 		this.bars = document.getElementById(bannerBarsIconID) as Element
-// 		this.menu = document.getElementById(navMenuID) as Element
-// 		this.overlay = document.getElementById(navOverlayID) as Element
-// 		this.hook()
-// 	}
-// 	hook = () => {
-// 		this.x.addEventListener('click', () => {
-// 			this.close()
-// 		})
-// 		this.bars.addEventListener('click', () => {
-// 			this.open()
-// 		})
-// 		this.overlay.addEventListener('click', () => {
-// 			this.close()
-// 		})
-// 	}
-// 	open = () => {
-// 		this.x.classList.remove('hidden')
-// 		this.bars.classList.add('hidden')
-// 		this.menu.classList.remove('hidden')
-// 		this.overlay.classList.remove('hidden')
-// 	}
-// 	close = () => {
-// 		this.x.classList.add('hidden')
-// 		this.bars.classList.remove('hidden')
-// 		this.menu.classList.add('hidden')
-// 		this.overlay.classList.add('hidden')
-// 	}
-// }
-
-
+const toggleNavMenu = (banner: Banner) => {
+	banner.bars.addEventListener('click', () => {
+		banner.bars.classList.toggle('hidden')
+		banner.menu.classList.toggle('hidden')
+		banner.x.classList.toggle('hidden')
+		banner.overlay.classList.toggle('hidden')
+	})
+	banner.x.addEventListener('click', () => {
+		banner.bars.classList.toggle('hidden')
+		banner.menu.classList.toggle('hidden')
+		banner.x.classList.toggle('hidden')
+		banner.overlay.classList.toggle('hidden')
+	})
+	banner.overlay.addEventListener('click', () => {
+		banner.bars.classList.toggle('hidden')
+		banner.menu.classList.toggle('hidden')
+		banner.x.classList.toggle('hidden')
+		banner.overlay.classList.toggle('hidden')
+	})
+}
 
 //=======================================================
 // CLIENT-SIDE ENTRY-POINT

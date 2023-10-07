@@ -29,7 +29,7 @@ app.get('/', (context) => {
 	return loginPage(context)
 })
 
-app.get('/vison', (context) => {
+app.get('/vision', (context) => {
 	console.log(`path: ${context.path}`)
 	return visionPage(context)
 })

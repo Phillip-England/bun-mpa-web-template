@@ -141,6 +141,9 @@ class ServerCompomentFile {
 		let clientOutputPath = `./${this.path.replace('server', 'client')}`
 		clientOutputPath = clientOutputPath.replace('.tsx', '.ts')
 		let file: BunFile = Bun.file(clientOutputPath)
+		if (this.outputProperties == '' && this.outputTypes == '') {
+			return
+		}
 		Bun.write(file, this.clientComponentText)
 
 		

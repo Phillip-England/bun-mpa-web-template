@@ -37,7 +37,6 @@ const loginPage = () => {
 	let loginForm = new LoginForm()
 	console.log(banner)
 	console.log(loginForm)
-
 }
 
 const visionPage = () => {

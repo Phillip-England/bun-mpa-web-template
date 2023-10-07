@@ -1,7 +1,7 @@
 # A Quickstart Template for MPA in Bun with Elsysia and JSX Components
 
 ## Client Side Component Build Tool Included
-This project includes a client side build tool which is very useful for MPA development. You can build your JSX components on the server, and the build tool will generate client side components to match. These client side components contain all the IDs, class names, DOM elements found within your server components. This enables us to quickly grab the components we need in our client side code to hook event handlers, animations, ect. 
+This project includes a client side build tool which is very useful for MPA development. You can construct your JSX components on the server, and then build tool will generate client side components to match. These client side components contain all the IDs, class names, DOM elements found within your server components. This enables us to quickly grab the components we need in our client side code to hook event handlers, animations, ect. 
 
 ## In Development
 This tool is in active development. For now it lives within this MPA template, but I do plan to release it as a stand alone build tool for anyone interested in following along.
@@ -16,7 +16,10 @@ You'll then need to install all the required dependancies. You can do this by ru
 bun install
 ```
 ## Environment Variables
-This project uses fontawesome for icons. Provide a FONT_AWESOME_KEY in a .env file found in the root of your project to opt in. To get your own key, go to fontawesome and get a script tag to use their icons. In the script tag, the src attribute is the key. Place this src attribute in the .env file.
+This project uses fontawesome for icons. Provide a FONTAWESOME_KEY in a .env file found in the root of your project to opt in. To get your own key, go to fontawesome and get a script tag to use their icons. In the script tag, the src attribute is the key. Place this src attribute in the .env file.
+```bash
+FONTAWESOME_KEY = <the value in the src attribute of your fontawesome script tag>
+```
 
 ## Development
 Three package.json scripts exist within this project. Here is a breakdown of how they all work.

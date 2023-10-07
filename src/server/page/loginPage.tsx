@@ -1,6 +1,7 @@
 import { Context } from "elysia";
 import { LoginForm } from "../component/LoginForm";
 import { GuestLayout } from "../layout/GuestLayout";
+import { Layout } from "../layout/Layout";
 
 
 
@@ -13,7 +14,7 @@ export const loginPage = (context: Context<{
     response: unknown;
 }, {}>) => {
 	return (
-		<GuestLayout 
+		<Layout 
 			title="Login | CFA Suite"
 			path={context.path}
 			children={

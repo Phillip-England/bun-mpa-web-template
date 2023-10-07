@@ -9,11 +9,10 @@ type GuestLayoutProps = {
 }
 
 export const GuestLayout = ({title, path, children}: GuestLayoutProps): JSX.Element => {
-	let fontAwesomeKey: string | undefined = Bun.env.FONT_AWESOME_KEY
-	console.log(fontAwesomeKey)
+	let fontAwesomeKey: string | undefined = Bun.env.FONTAWESOME_KEY
 	if (fontAwesomeKey == undefined) {
 		fontAwesomeKey = ''
-		console.error('FONT_AWESOME_KEY not provided in .env')
+		console.error('FONTAWESOME_KEY not provided in .env')
 	}
 	return (
 		<html lang="en">

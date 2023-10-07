@@ -62,6 +62,9 @@ const router: Router = {
 In ./src/client/client.ts - you can see the following example of using a client-side component. Here, we simple bring in a component from ./src/client/components and console.log them out to the console. Go checkout your console to see the results. You'll see that all the IDs, class names, and DOM Elements are already built and ready to use
 
 ```ts
+import { Banner } from "./component/Banner";
+import { LoginForm } from "./component/LoginForm";
+
 const loginPage = () => {
 	let banner = new Banner()
 	toggleNavMenu(banner)

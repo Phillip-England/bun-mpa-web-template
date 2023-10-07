@@ -1,44 +1,86 @@
-// src/config.ts
-var bannerID = "banner";
+// src/config/dom.ts
+var TopBarID = "top-bar";
+var bannerXIconID = "banner-x-icon";
 var bannerBarsIconID = "banner-bars-icon";
-var bannerCloseIconID = "banner-x-icon";
-var navMenuOverlayID = "nav-menu-overlay";
 var navMenuID = "nav-menu";
+var navOverlayID = "nav-overlay";
 
-// src/client.js
-var qs = (selector) => {
-  let element = document.querySelector(selector);
-  return element;
+// src/client/client.ts
+var router = {
+  "/": () => {
+    loginPage();
+  },
+  "/vison": () => {
+    visionPage();
+  },
+  "/score/cem": () => {
+    cemPage();
+  },
+  "/score/sales": () => {
+    salesPage();
+  },
+  "/score/talent": () => {
+    talentPage();
+  },
+  "/score/finance": () => {
+    financePage();
+  }
 };
-var showMany = (elements) => {
-  elements.forEach((element) => {
-    element.classList.remove("hidden");
-  });
+var loginPage = () => {
 };
-var hideMany = (elements) => {
-  elements.forEach((element) => {
-    element.classList.add("hidden");
-  });
+var visionPage = () => {
+  const banner = new Banner;
 };
-var banner = qs(`#${bannerID}`);
-var bannerBarsIcon = qs(`#${bannerBarsIconID}`);
-var bannerCloseIcon = qs(`#${bannerCloseIconID}`);
-var navMenu = qs(`#${navMenuID}`);
-var navMenuOverlay = qs(`#${navMenuOverlayID}`);
-var openNavMenu = () => {
-  hideMany([bannerBarsIcon]);
-  showMany([bannerCloseIcon, navMenu, navMenuOverlay]);
+var cemPage = () => {
+  const banner = new Banner;
 };
-var closeNavMenu = () => {
-  showMany([bannerBarsIcon]);
-  hideMany([bannerCloseIcon, navMenu, navMenuOverlay]);
+var salesPage = () => {
+  const banner = new Banner;
 };
-bannerBarsIcon.addEventListener("click", () => {
-  openNavMenu();
-});
-bannerCloseIcon.addEventListener("click", () => {
-  closeNavMenu();
-});
-navMenuOverlay.addEventListener("click", () => {
-  closeNavMenu();
-});
+var talentPage = () => {
+  const banner = new Banner;
+};
+var financePage = () => {
+  const banner = new Banner;
+};
+
+class Banner {
+  topBar;
+  x;
+  bars;
+  menu;
+  overlay;
+  constructor() {
+    this.topBar = document.getElementById(TopBarID);
+    this.x = document.getElementById(bannerXIconID);
+    this.bars = document.getElementById(bannerBarsIconID);
+    this.menu = document.getElementById(navMenuID);
+    this.overlay = document.getElementById(navOverlayID);
+    this.hook();
+  }
+  hook = () => {
+    this.x.addEventListener("click", () => {
+      this.close();
+    });
+    this.bars.addEventListener("click", () => {
+      this.open();
+    });
+    this.overlay.addEventListener("click", () => {
+      this.close();
+    });
+  };
+  open = () => {
+    this.x.classList.remove("hidden");
+    this.bars.classList.add("hidden");
+    this.menu.classList.remove("hidden");
+    this.overlay.classList.remove("hidden");
+  };
+  close = () => {
+    this.x.classList.add("hidden");
+    this.bars.classList.remove("hidden");
+    this.menu.classList.add("hidden");
+    this.overlay.classList.add("hidden");
+  };
+}
+var routeFunc = router[window.location.pathname];
+routeFunc();
